@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Navigate to the directory where the compressed bundle is located
-cd ~/task3-4
+# Navigate to the directory containing the files
+cd /path/to/directory
 
-# Decompress the archive
-gunzip files_archive.tar.gz
+# Create a tar archive of the files
+tar -cvf files_archive.tar file*.txt small_file*.txt medium_file*.txt large_file*.txt
 
-# Extract the files from the archive
-tar -xvf files_archive.tar ~ 
+# Compress the tar archive using gzip
+gzip files_archive.tar
 
-# Display information about the extracted files
-ls -l file*.txt small_file*.txt medium_file*.txt large_file*.txt
+# Display information about the compressed archive
+ls -l files_archive.tar.gz
